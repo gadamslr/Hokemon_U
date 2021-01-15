@@ -54,7 +54,7 @@ namespace Hokemon_U
                 "Health: {1}/{2}\n" +
                 "Attack value: {3}\n" +
                 "Speed value: {4}\n" +
-                "Defense value: {5}", name, Health, max_health, attack, speed, defense);
+                "Defense value: {5}\n\n", name, Health, max_health, attack, speed, defense);
         }
 
         public int random_int_generator(int min_value, int max_value) // int min_value, int max_value are PARAMETERS
