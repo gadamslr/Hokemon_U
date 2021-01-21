@@ -6,6 +6,7 @@ namespace Hokemon_U
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Hello to Hokeworld!");
 
             //Hokemon hokeObject01 = new Hokemon(); // INSTANTIATION of object hokeObject01

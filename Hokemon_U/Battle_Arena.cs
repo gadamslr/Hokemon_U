@@ -47,7 +47,9 @@ namespace Hokemon_U
                     defenceValue = Defender.defenceCalculator();
 
                     Console.WriteLine("{0}: Attacks with value: {1}\n", Attacker.Name, attackValue);
-
+                    
+                    System.Threading.Thread.Sleep(2000); // Sleep statement for 2s
+                    
                     Console.WriteLine("{0}: Generates a defence...", Defender.Name);
                     Console.WriteLine("{0}: Defence value {1}\n", Defender.Name, defenceValue);
 
@@ -68,12 +70,6 @@ namespace Hokemon_U
                     Defender = tempHoke;
 
                 }
-
-
-
-
-
-
 
             }
 
