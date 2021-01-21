@@ -68,5 +68,31 @@ namespace Hokemon_U
 
             return randomValue;
         }
+    
+        public void about()
+        {
+            Console.WriteLine("I am a mystical species known as Hokemon!!");
+        }
+
+        public int attackCalculator()
+        {
+            int attackValue;
+
+            // Adding an attack Calculation - 
+            attackValue = (attack + speed) * random_int_generator(0,2);
+
+            return attackValue;
+        }
+
+        public int defenceCalculator()
+        {
+            int defenceValue;
+
+            // Adding an attack Calculation - 
+            defenceValue = (defense + speed) * random_int_generator(0, 2);
+
+            return defenceValue;
+        }
+
     }
 }

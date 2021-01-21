@@ -8,12 +8,12 @@ namespace Hokemon_U
         {
             Console.WriteLine("Hello to Hokeworld!");
 
-            Hokemon hokeObject01 = new Hokemon(); // INSTANTIATION of object hokeObject01
+            //Hokemon hokeObject01 = new Hokemon(); // INSTANTIATION of object hokeObject01
 
             //Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
 
-            hokeObject01.get_details();
-
+            //hokeObject01.get_details();
+/*
             Hokemon hoke02 = new Hokemon();  // INSTANTIATION of object 2
 
             //Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
@@ -29,12 +29,32 @@ namespace Hokemon_U
 
             hoke03.get_details();
 
+            // Using the about method 
+            hokeObject01.about();
+            hoke02.about();
+
+*/
+
+            Hokemon hoke04 = new Hokemon();  // INSTANTIATION from Hokemon Class
+            hoke04.get_details();
+
+            Halor haloHokemon01 = new Halor();  // INSTANTIATION from Halor Class
+            haloHokemon01.get_details();
+            // Demonstrating POLYMORPHISM with about method
+            // a Hokemon instance hoke04
+            // a halor instance haloHokemon01
+            hoke04.about();
+            haloHokemon01.about();
+
+
             Battle_Arena firstArena = new Battle_Arena(); // INSTANTIATED Battle_Arena
 
-            firstArena.ChallengeMe(hokeObject01);
+            firstArena.ChallengeMe(haloHokemon01);
 
-            firstArena.ChallengeAccepted(hokeObject01, hoke03); // Passing two objects into 
+            firstArena.ChallengeAccepted(haloHokemon01, hoke04); // Passing two objects into 
                                                                 // the firstArena
+
+            firstArena.Battle(haloHokemon01, hoke04); // Starting Battle
 
         }
     }
