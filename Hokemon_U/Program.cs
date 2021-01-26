@@ -6,18 +6,28 @@ namespace Hokemon_U
     {
         static void Main(string[] args)
         {
+            // Declaring members
+            Hinstinct[] ChallengerArray = new Hinstinct[3];
+            Battle_Arena firstArena = new Battle_Arena(); // INSTANTIATED Battle_Arena
+
+            Random rnd = new Random(); // Instantiating the rnd object
+
+            bool repeatGame = true;
+            string result;
 
             Console.WriteLine("Hello to Hokeworld!");
 
-            //Hokemon hokeObject01 = new Hokemon(); // INSTANTIATION of object hokeObject01
+            /*
 
-            //Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
+            Hokemon hokeObject01 = new Hokemon(); // INSTANTIATION of object hokeObject01
 
-            //hokeObject01.get_details();
-/*
+            Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
+
+            hokeObject01.get_details();
+
             Hokemon hoke02 = new Hokemon();  // INSTANTIATION of object 2
 
-            //Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
+            Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
 
             Console.WriteLine("Name of Hokemon: {0}",hoke02.Name);
             Console.WriteLine("***********");
@@ -26,7 +36,7 @@ namespace Hokemon_U
 
             Hokemon hoke03 = new Hokemon();  // INSTANTIATION of object 2
 
-            //Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
+            Console.WriteLine("Hokemon name is: {0}", hokeObject01.Name);
 
             hoke03.get_details();
 
@@ -35,28 +45,48 @@ namespace Hokemon_U
             hoke02.about();
 
 */
-
+/*
             Hokemon hoke04 = new Hokemon();  // INSTANTIATION from Hokemon Class
             hoke04.get_details();
+*/
 
-            Halor haloHokemon01 = new Halor();  // INSTANTIATION from Halor Class
-            haloHokemon01.get_details();
-            // Demonstrating POLYMORPHISM with about method
-            // a Hokemon instance hoke04
-            // a halor instance haloHokemon01
-            hoke04.about();
-            haloHokemon01.about();
+            // Creating PLAYER Hokemon
+            Halor playerHokemon01 = new Halor();  // INSTANTIATION from Halor Class
+            playerHokemon01.get_details();
 
 
-            Battle_Arena firstArena = new Battle_Arena(); // INSTANTIATED Battle_Arena
+            // NPC Hokemon
 
-            firstArena.ChallengeMe(haloHokemon01);
+            for (int i = 0; i < ChallengerArray.Length; i++)
+            {
+                ChallengerArray[i] = new Hinstinct(); // INSTANTIATING Challenger Hokemon
+            }
 
-            firstArena.ChallengeAccepted(haloHokemon01, hoke04); // Passing two objects into 
-                                                                // the firstArena
+            while (repeatGame == true)
+            {
 
-            firstArena.Battle(haloHokemon01, hoke04); // Starting Battle
 
+            
+                // Demonstrating POLYMORPHISM with about method
+                // a Hokemon instance hoke04
+                // a halor instance haloHokemon01
+                playerHokemon01.about();
+
+                firstArena.ChallengeMe(playerHokemon01);
+
+
+
+                firstArena.Battle(playerHokemon01, ChallengerArray[rnd.Next(0,ChallengerArray.Length)]); // Passing two objects into 
+
+                // the firstArena
+
+                Console.WriteLine("Do you want to repeat the game? (y/n)");
+                result = Console.ReadLine();
+                if (result.ToLower()[0] == 'n')
+                {
+                    repeatGame = false;
+                }
+            }
         }
     }
 }

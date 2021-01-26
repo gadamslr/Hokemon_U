@@ -16,6 +16,7 @@ namespace Hokemon_U
         private int attack;
         private int speed;
         private int defense;
+        private string team = "Hokemon";
 
         // Properties
 
@@ -30,6 +31,11 @@ namespace Hokemon_U
             set { health = value; }
         }
 
+        public string Team
+        {
+            get { return team; }   // access to the name attribute
+            set { team = value; }  // sets the name attribute
+        }
         // Methods
 
         public Hokemon()  // CONSTRUCTOR method runs 1st when INSTANTIATED
